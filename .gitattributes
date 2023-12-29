@@ -11,3 +11,5 @@
 *.html linguist-detectable=false
 
 *.xml linguist-detectable=false
+
+*.tex linguist-detectable=false
