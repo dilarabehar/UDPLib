@@ -1,0 +1,19 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+*.cpp linguist-language=C++
+
+*.csharp linguist-detectable=true
+
+*.java linguist-detectable=false
+
+*.js linguist-detectable=false
+
+*.html linguist-detectable=false
+
+*.xml linguist-detectable=false
+
+*.tex linguist-detectable=false
+
+*.sty linguist-detectable=false
+
+*.css linguist-detectable=false
