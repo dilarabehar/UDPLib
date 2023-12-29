@@ -1,0 +1,9 @@
+digraph "ThreadPool"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="ThreadPool",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="A thread pool for processing messages with worker threads."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" msgQueue_acces\nmsgqueue" ];
+  Node2 [label="MsgQueue\< MsgQueueItem \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMsgQueue.html",tooltip=" "];
+}

@@ -1,0 +1,95 @@
+\hypertarget{udp__server_8cpp}{}\doxysection{/mnt/c/\+Users/dilar/\+One\+Drive/\+Masaüstü/project/udplib/udp\+\_\+project/src/udp\+\_\+server.cpp File Reference}
+\label{udp__server_8cpp}\index{/mnt/c/Users/dilar/OneDrive/Masaüstü/project/udplib/udp\_project/src/udp\_server.cpp@{/mnt/c/Users/dilar/OneDrive/Masaüstü/project/udplib/udp\_project/src/udp\_server.cpp}}
+
+
+This file handle the server operations.  
+
+
+{\ttfamily \#include \char`\"{}../include/\+Server.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/epoll.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+Include dependency graph for udp\+\_\+server.\+cpp\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structclient__info}{client\+\_\+info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{udp__server_8cpp_ad8884ac0568251ddfca180df3ab7a445}{handle\+Pass}} (void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Entry point for handling a client\textquotesingle{}s request in a separate thread. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{udp__server_8cpp_a6da9a739ed79573f650207f6dce4f805}\label{udp__server_8cpp_a6da9a739ed79573f650207f6dce4f805}} 
+void {\bfseries write\+File} (const char $\ast$data)
+\item 
+void $\ast$ \mbox{\hyperlink{udp__server_8cpp_a58db6ae718d52ae820539d9225e83f0b}{server\+\_\+start}} (void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Entry point for the server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file handle the server operations. 
+
+\begin{DoxyAuthor}{Author}
+Dilara 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/09-\/20
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{udp__server_8cpp_ad8884ac0568251ddfca180df3ab7a445}\label{udp__server_8cpp_ad8884ac0568251ddfca180df3ab7a445}} 
+\index{udp\_server.cpp@{udp\_server.cpp}!handlePass@{handlePass}}
+\index{handlePass@{handlePass}!udp\_server.cpp@{udp\_server.cpp}}
+\doxysubsubsection{\texorpdfstring{handlePass()}{handlePass()}}
+{\footnotesize\ttfamily void$\ast$ handle\+Pass (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+Entry point for handling a client\textquotesingle{}s request in a separate thread. 
+
+This function is the entry point for handling a client\textquotesingle{}s request in a separate thread. It invokes the handle\+Client method of the \mbox{\hyperlink{classServer}{Server}} class to process the client\textquotesingle{}s request.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & A pointer to a \mbox{\hyperlink{structclient__info}{client\+\_\+info}} structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NULL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{udp__server_8cpp_a58db6ae718d52ae820539d9225e83f0b}\label{udp__server_8cpp_a58db6ae718d52ae820539d9225e83f0b}} 
+\index{udp\_server.cpp@{udp\_server.cpp}!server\_start@{server\_start}}
+\index{server\_start@{server\_start}!udp\_server.cpp@{udp\_server.cpp}}
+\doxysubsubsection{\texorpdfstring{server\_start()}{server\_start()}}
+{\footnotesize\ttfamily void$\ast$ server\+\_\+start (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+Entry point for the server. 
+
+This function is the entry point for the server and sets up the necessary components to start listening for client connections.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & A pointer to a \mbox{\hyperlink{classServer}{Server}} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NULL 
+\end{DoxyReturn}

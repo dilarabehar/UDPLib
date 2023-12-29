@@ -1,0 +1,276 @@
+\hypertarget{classServer}{}\doxysection{Server Class Reference}
+\label{classServer}\index{Server@{Server}}
+
+
+A class to represents a udp server.  
+
+
+
+
+{\ttfamily \#include $<$Server.\+h$>$}
+
+
+
+Collaboration diagram for Server\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structServer_1_1clntaddr}{clntaddr}}
+\begin{DoxyCompactList}\small\item\em The sockaddr\+\_\+in struct is used to store IPv4 server information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classServer_a7eab7e37a0b606e31eccd84310f11e4c}{Server}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{classServer}{Server}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classServer_a7d1fe6ba5f0fe9190a4f039662ea0e85}{Server}} (int port)
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{classServer}{Server}} object with the specified port. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classServer_a6b6f5940642bb338a31b8b85c25f09e4}{create\+\_\+socket}} ()
+\begin{DoxyCompactList}\small\item\em Creates a socket for the server. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classServer_a86636ef092d0cf004068857816ac4135}{bind\+\_\+des}} ()
+\begin{DoxyCompactList}\small\item\em Binds the socket to the server\textquotesingle{}s address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServer_a8aceb0c6d3fc38416ee55dcfdb6191bf}{serv\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the server\textquotesingle{}s address structure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServer_a1402ea1ac796958a1d47acbd38492781}\label{classServer_a1402ea1ac796958a1d47acbd38492781}} 
+void \mbox{\hyperlink{classServer_a1402ea1ac796958a1d47acbd38492781}{client\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the client\textquotesingle{}s address structure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServer_a6ac93c597a5b21b274c4617dc12255d8}{epoll\+\_\+form}} ()
+\begin{DoxyCompactList}\small\item\em Sets up the epoll event loop for the server. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{classServer_a78bf579c030b747e537cb140acba81bb}{handle\+Client}} (void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Handles a client\textquotesingle{}s request. \end{DoxyCompactList}\item 
+ssize\+\_\+t \mbox{\hyperlink{classServer_aad094365216660b9ff50f72bcbbdb475}{recv\+\_\+server}} ()
+\begin{DoxyCompactList}\small\item\em Receives data from clients and processes it. \end{DoxyCompactList}\item 
+ssize\+\_\+t \mbox{\hyperlink{classServer_a4efb47d7986896dde0353641d2ef386e}{send\+\_\+server}} (struct \mbox{\hyperlink{structclient__info}{client\+\_\+info}} $\ast$info)
+\begin{DoxyCompactList}\small\item\em Sends data to clients. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServer_a37e241ed44d1ef74df7535ffd45bcaa3}\label{classServer_a37e241ed44d1ef74df7535ffd45bcaa3}} 
+void {\bfseries write\+File} (const char $\ast$data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classServer_aa97c0bc77f24d681c447e285c7ba80f3}\label{classServer_aa97c0bc77f24d681c447e285c7ba80f3}} 
+\mbox{\hyperlink{classThreadPool}{Thread\+Pool}} $\ast$ \mbox{\hyperlink{classServer_aa97c0bc77f24d681c447e285c7ba80f3}{thread\+Pool}} = \mbox{\hyperlink{classThreadPool_a425d9481a69be20791ab1cc60e33c8ad}{Thread\+Pool\+::get\+Instance}}()
+\begin{DoxyCompactList}\small\item\em The thread pool object provides parallel processing capabilities for the server. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServer_a91beb2e896fca3cf93b98e5a07f2ee14}\label{classServer_a91beb2e896fca3cf93b98e5a07f2ee14}} 
+int {\bfseries serv\+Fd} \{\}
+\item 
+\mbox{\Hypertarget{classServer_aef32a6e93b8632f63748691c09414e4e}\label{classServer_aef32a6e93b8632f63748691c09414e4e}} 
+int {\bfseries clint\+Fd} \{\}
+\item 
+\mbox{\Hypertarget{classServer_a729ca95f49ab0fc650d072cf2607360c}\label{classServer_a729ca95f49ab0fc650d072cf2607360c}} 
+int {\bfseries clint\+Port} \{\}
+\item 
+\mbox{\Hypertarget{classServer_a08fafef1714daf21999653ccbba0bd23}\label{classServer_a08fafef1714daf21999653ccbba0bd23}} 
+int {\bfseries serv\+Port} \{\}
+\item 
+\mbox{\Hypertarget{classServer_a4187d3995cb985509dc646d7a71d9b88}\label{classServer_a4187d3995cb985509dc646d7a71d9b88}} 
+int {\bfseries epoll\+Fd} \{\}
+\item 
+\mbox{\Hypertarget{classServer_a55f815b7ffe2b4819ed177467e948776}\label{classServer_a55f815b7ffe2b4819ed177467e948776}} 
+char $\ast$ {\bfseries item\+\_\+srv\+\_\+ip}
+\item 
+\mbox{\Hypertarget{classServer_adc2dfe1470b2d21d78c31e50ff0a55eb}\label{classServer_adc2dfe1470b2d21d78c31e50ff0a55eb}} 
+struct \mbox{\hyperlink{structclient__info}{client\+\_\+info}} $\ast$ {\bfseries info} \{\}
+\item 
+struct epoll\+\_\+event \mbox{\hyperlink{classServer_adc08e6bbffceb4fac00ad25bb9398438}{event}}
+\begin{DoxyCompactList}\small\item\em The epoll\+\_\+event struct represents an event in the epoll event loop. \end{DoxyCompactList}\item 
+struct epoll\+\_\+event \mbox{\hyperlink{classServer_ab655617ad83fe0615853902761ebd3a2}{events}} \mbox{[}MAX\+\_\+\+EVENTS\mbox{]}
+\begin{DoxyCompactList}\small\item\em An array of epoll\+\_\+event structs to store multiple events. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServer_a5e74d970e89b390643bbdb78371d803b}\label{classServer_a5e74d970e89b390643bbdb78371d803b}} 
+socklen\+\_\+t {\bfseries clientlen} = sizeof(\mbox{\hyperlink{structServer_1_1clntaddr}{clntaddr}})
+\item 
+\mbox{\Hypertarget{classServer_ae1f9d267ad674a523774989a64b58456}\label{classServer_ae1f9d267ad674a523774989a64b58456}} 
+char {\bfseries buffer} \mbox{[}MAXLINE\mbox{]}
+\item 
+\mbox{\Hypertarget{classServer_a026fac69e327945510258c4f462d194f}\label{classServer_a026fac69e327945510258c4f462d194f}} 
+pthread\+\_\+t {\bfseries thread\+\_\+id}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to represents a udp server. 
+
+This class provides the core functionality of a network server and serves clients using a message queue and a thread pool. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classServer_a7eab7e37a0b606e31eccd84310f11e4c}\label{classServer_a7eab7e37a0b606e31eccd84310f11e4c}} 
+\index{Server@{Server}!Server@{Server}}
+\index{Server@{Server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{Server()}{Server()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Server\+::\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor for the \mbox{\hyperlink{classServer}{Server}} class. 
+
+This constructor creates a \mbox{\hyperlink{classServer}{Server}} object with default parameters. \mbox{\Hypertarget{classServer_a7d1fe6ba5f0fe9190a4f039662ea0e85}\label{classServer_a7d1fe6ba5f0fe9190a4f039662ea0e85}} 
+\index{Server@{Server}!Server@{Server}}
+\index{Server@{Server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{Server()}{Server()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Server\+::\+Server (\begin{DoxyParamCaption}\item[{int}]{port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a \mbox{\hyperlink{classServer}{Server}} object with the specified port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The port on which the server will listen. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classServer_a86636ef092d0cf004068857816ac4135}\label{classServer_a86636ef092d0cf004068857816ac4135}} 
+\index{Server@{Server}!bind\_des@{bind\_des}}
+\index{bind\_des@{bind\_des}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{bind\_des()}{bind\_des()}}
+{\footnotesize\ttfamily int Server\+::bind\+\_\+des (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Binds the socket to the server\textquotesingle{}s address. 
+
+\begin{DoxyReturn}{Returns}
+The result of the bind operation.
+\end{DoxyReturn}
+This function binds the socket to the server\textquotesingle{}s address and port. \mbox{\Hypertarget{classServer_a6b6f5940642bb338a31b8b85c25f09e4}\label{classServer_a6b6f5940642bb338a31b8b85c25f09e4}} 
+\index{Server@{Server}!create\_socket@{create\_socket}}
+\index{create\_socket@{create\_socket}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{create\_socket()}{create\_socket()}}
+{\footnotesize\ttfamily int Server\+::create\+\_\+socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a socket for the server. 
+
+This function creates a socket for the server to use for communication.
+
+\begin{DoxyReturn}{Returns}
+The socket file descriptor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classServer_a6ac93c597a5b21b274c4617dc12255d8}\label{classServer_a6ac93c597a5b21b274c4617dc12255d8}} 
+\index{Server@{Server}!epoll\_form@{epoll\_form}}
+\index{epoll\_form@{epoll\_form}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{epoll\_form()}{epoll\_form()}}
+{\footnotesize\ttfamily void Server\+::epoll\+\_\+form (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets up the epoll event loop for the server. 
+
+This function creates an epoll instance and adds the server socket to it for event monitoring using epoll\+\_\+ctl. The server socket will be monitored for EPOLLIN (input readiness) and EPOLLET (edge-\/triggered) events.
+
+\begin{DoxyNote}{Note}
+EPOLL\+\_\+\+CTL\+\_\+\+ADD is used to add the server socket to the epoll instance.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+epoll\+\_\+ctl() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classServer_a78bf579c030b747e537cb140acba81bb}\label{classServer_a78bf579c030b747e537cb140acba81bb}} 
+\index{Server@{Server}!handleClient@{handleClient}}
+\index{handleClient@{handleClient}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{handleClient()}{handleClient()}}
+{\footnotesize\ttfamily void $\ast$ Server\+::handle\+Client (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+Handles a client\textquotesingle{}s request. 
+
+This function processes a client\textquotesingle{}s request and performs necessary operations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & A pointer to a \mbox{\hyperlink{structclient__info}{client\+\_\+info}} structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NULL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classServer_aad094365216660b9ff50f72bcbbdb475}\label{classServer_aad094365216660b9ff50f72bcbbdb475}} 
+\index{Server@{Server}!recv\_server@{recv\_server}}
+\index{recv\_server@{recv\_server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{recv\_server()}{recv\_server()}}
+{\footnotesize\ttfamily ssize\+\_\+t Server\+::recv\+\_\+server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Receives data from clients and processes it. 
+
+This function waits for incoming events using epoll and processes data received from clients. For each client request, it creates a new thread to handle the request in parallel. The function also prints relevant information about the received data.
+
+\begin{DoxyReturn}{Returns}
+The number of bytes received, or 0 on successful execution.
+\end{DoxyReturn}
+This function uses the epoll\+\_\+wait function to wait for incoming events on the server socket. When data is received from a client, it creates a new thread to handle the client\textquotesingle{}s request using the handle\+Pass function. The received message is encapsulated in a \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}} object and pushed to the \mbox{\hyperlink{classThreadPool}{Thread\+Pool}}\textquotesingle{}s message queue for further processing. The function also prints information about the source and destination ports, client and server IP addresses, and the received message.
+
+\begin{DoxySeeAlso}{See also}
+epoll\+\_\+wait() 
+
+\mbox{\hyperlink{udp__server_8cpp_ad8884ac0568251ddfca180df3ab7a445}{handle\+Pass()}} 
+
+\mbox{\hyperlink{classServer_a4efb47d7986896dde0353641d2ef386e}{send\+\_\+server()}} 
+
+\mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}} 
+
+\mbox{\hyperlink{classThreadPool}{Thread\+Pool}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classServer_a4efb47d7986896dde0353641d2ef386e}\label{classServer_a4efb47d7986896dde0353641d2ef386e}} 
+\index{Server@{Server}!send\_server@{send\_server}}
+\index{send\_server@{send\_server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{send\_server()}{send\_server()}}
+{\footnotesize\ttfamily ssize\+\_\+t Server\+::send\+\_\+server (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structclient__info}{client\+\_\+info}} $\ast$}]{info }\end{DoxyParamCaption})}
+
+
+
+Sends data to clients. 
+
+This function sends data to clients using the thread pool for parallel processing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em info} & A pointer to a \mbox{\hyperlink{structclient__info}{client\+\_\+info}} structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes sent. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classServer_a8aceb0c6d3fc38416ee55dcfdb6191bf}\label{classServer_a8aceb0c6d3fc38416ee55dcfdb6191bf}} 
+\index{Server@{Server}!serv\_init@{serv\_init}}
+\index{serv\_init@{serv\_init}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{serv\_init()}{serv\_init()}}
+{\footnotesize\ttfamily void Server\+::serv\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the server\textquotesingle{}s address structure. 
+
+This function sets up the server\textquotesingle{}s address structure with the specified port. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classServer_adc08e6bbffceb4fac00ad25bb9398438}\label{classServer_adc08e6bbffceb4fac00ad25bb9398438}} 
+\index{Server@{Server}!event@{event}}
+\index{event@{event}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{event}{event}}
+{\footnotesize\ttfamily struct epoll\+\_\+event Server\+::event}
+
+
+
+The epoll\+\_\+event struct represents an event in the epoll event loop. 
+
+This struct is used to manage and monitor events that occur on file descriptors. It is part of the epoll-\/based event handling mechanism used in the server. \mbox{\Hypertarget{classServer_ab655617ad83fe0615853902761ebd3a2}\label{classServer_ab655617ad83fe0615853902761ebd3a2}} 
+\index{Server@{Server}!events@{events}}
+\index{events@{events}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{events}{events}}
+{\footnotesize\ttfamily struct epoll\+\_\+event Server\+::events\mbox{[}MAX\+\_\+\+EVENTS\mbox{]}}
+
+
+
+An array of epoll\+\_\+event structs to store multiple events. 
+
+This array is used to store and manage multiple events in the epoll event loop. It can hold up to MAX\+\_\+\+EVENTS events. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/\+Users/dilar/\+One\+Drive/\+Masaüstü/project/udplib/udp\+\_\+project/include/Server.\+h\item 
+/mnt/c/\+Users/dilar/\+One\+Drive/\+Masaüstü/project/udplib/udp\+\_\+project/src/\mbox{\hyperlink{udp__server_8cpp}{udp\+\_\+server.\+cpp}}\end{DoxyCompactItemize}

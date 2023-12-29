@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/udp_server.dir/udp_server.cpp.o -o udp_server  -lgtest -lgtest_main -lgmock -lgmock_main -lpthread 

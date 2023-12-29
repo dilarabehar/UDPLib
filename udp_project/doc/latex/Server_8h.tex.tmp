@@ -1,0 +1,50 @@
+\hypertarget{Server_8h}{}\doxysection{/mnt/c/\+Users/dilar/\+One\+Drive/\+Masaüstü/project/udplib/udp\+\_\+project/include/\+Server.h File Reference}
+\label{Server_8h}\index{/mnt/c/Users/dilar/OneDrive/Masaüstü/project/udplib/udp\_project/include/Server.h@{/mnt/c/Users/dilar/OneDrive/Masaüstü/project/udplib/udp\_project/include/Server.h}}
+
+
+The \mbox{\hyperlink{classServer}{Server}} class represents a network server.  
+
+
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/epoll.\+h$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include \char`\"{}Thread\+Pool.\+h\char`\"{}}\newline
+Include dependency graph for Server.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classServer}{Server}}
+\item 
+struct \mbox{\hyperlink{structServer_1_1clntaddr}{Server\+::clntaddr}}
+\begin{DoxyCompactList}\small\item\em The sockaddr\+\_\+in struct is used to store IPv4 server information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{Server_8h_a3e937c42922f7601edb17b747602c471}\label{Server_8h_a3e937c42922f7601edb17b747602c471}} 
+\#define {\bfseries MAXLINE}~1024
+\item 
+\mbox{\Hypertarget{Server_8h_ae42954bb8545d24e3e9dcde5920c9a0b}\label{Server_8h_ae42954bb8545d24e3e9dcde5920c9a0b}} 
+\#define {\bfseries MAX\+\_\+\+EVENTS}~10
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classServer}{Server}} class represents a network server. 
+
+\begin{DoxyAuthor}{Author}
+Dilara 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/09-\/20
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}

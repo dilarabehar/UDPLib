@@ -1,0 +1,126 @@
+\hypertarget{classMsgQueue}{}\doxysection{Msg\+Queue$<$ T $>$ Class Template Reference}
+\label{classMsgQueue}\index{MsgQueue$<$ T $>$@{MsgQueue$<$ T $>$}}
+
+
+A message queue for storing and processing messages of type \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}}.  
+
+
+
+
+{\ttfamily \#include $<$Msg\+Queue.\+h$>$}
+
+
+
+Collaboration diagram for Msg\+Queue$<$ T $>$\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMsgQueue_a42c9d89649e48e6abbc33a013a10c49a}{Push\+To\+Quceue}} (std\+::shared\+\_\+ptr$<$ T $>$ val)
+\begin{DoxyCompactList}\small\item\em Pushes a message onto the message queue. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}} $>$ \mbox{\hyperlink{classMsgQueue_a403f42506c81e79e01522370c78163d2}{Pop\+Queue}} ()
+\begin{DoxyCompactList}\small\item\em Pops a message from the message queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classMsgQueue}{Msg\+Queue}} \& \mbox{\hyperlink{classMsgQueue_a05706bd979be294b9eac6f5e663bb2b3}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Gets an instance of the \mbox{\hyperlink{classMsgQueue}{Msg\+Queue}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::mutex \mbox{\hyperlink{classMsgQueue_a7e353a6cc4f1d929173d115cc512a297}{mutex\+\_\+1}}
+\item 
+std\+::queue$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}} $>$ $>$ \mbox{\hyperlink{classMsgQueue_ac68bf4318f0757fe59ec4ecbf24bb713}{msg\+\_\+queue}}
+\item 
+\mbox{\hyperlink{classProcessModule}{Process\+Module}} \mbox{\hyperlink{classMsgQueue_a7547e9caeff3b33cedae7e5928bd1415}{process\+Module}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Msg\+Queue$<$ T $>$}
+
+A message queue for storing and processing messages of type \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}}. 
+
+This template class provides basic functionality to store and process messages of type \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}} in a thread-\/safe manner. It includes methods for pushing messages to the queue and popping messages from the queue. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMsgQueue_a05706bd979be294b9eac6f5e663bb2b3}\label{classMsgQueue_a05706bd979be294b9eac6f5e663bb2b3}} 
+\index{MsgQueue$<$ T $>$@{MsgQueue$<$ T $>$}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!MsgQueue$<$ T $>$@{MsgQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static \mbox{\hyperlink{classMsgQueue}{Msg\+Queue}}\& \mbox{\hyperlink{classMsgQueue}{Msg\+Queue}}$<$ T $>$\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Gets an instance of the \mbox{\hyperlink{classMsgQueue}{Msg\+Queue}} class. 
+
+This method returns a static instance of the \mbox{\hyperlink{classMsgQueue}{Msg\+Queue}} class, which allows access to the message queue functionality.
+
+\begin{DoxyReturn}{Returns}
+A reference to a static instance of the \mbox{\hyperlink{classMsgQueue}{Msg\+Queue}} class. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMsgQueue_a403f42506c81e79e01522370c78163d2}\label{classMsgQueue_a403f42506c81e79e01522370c78163d2}} 
+\index{MsgQueue$<$ T $>$@{MsgQueue$<$ T $>$}!PopQueue@{PopQueue}}
+\index{PopQueue@{PopQueue}!MsgQueue$<$ T $>$@{MsgQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{PopQueue()}{PopQueue()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}}$>$ \mbox{\hyperlink{classMsgQueue}{Msg\+Queue}}$<$ T $>$\+::Pop\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pops a message from the message queue. 
+
+This method pops a message of type \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}} from the message queue using the associated \mbox{\hyperlink{classProcessModule}{Process\+Module}}.
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to a \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}} message. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMsgQueue_a42c9d89649e48e6abbc33a013a10c49a}\label{classMsgQueue_a42c9d89649e48e6abbc33a013a10c49a}} 
+\index{MsgQueue$<$ T $>$@{MsgQueue$<$ T $>$}!PushToQuceue@{PushToQuceue}}
+\index{PushToQuceue@{PushToQuceue}!MsgQueue$<$ T $>$@{MsgQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{PushToQuceue()}{PushToQuceue()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classMsgQueue}{Msg\+Queue}}$<$ T $>$\+::Push\+To\+Quceue (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ T $>$}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pushes a message onto the message queue. 
+
+This method adds a shared pointer to a \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}} message to the message queue in a thread-\/safe manner. If the message queue was previously empty, it logs a message indicating that the queue is empty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & A shared pointer to a \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}} message. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classMsgQueue_ac68bf4318f0757fe59ec4ecbf24bb713}\label{classMsgQueue_ac68bf4318f0757fe59ec4ecbf24bb713}} 
+\index{MsgQueue$<$ T $>$@{MsgQueue$<$ T $>$}!msg\_queue@{msg\_queue}}
+\index{msg\_queue@{msg\_queue}!MsgQueue$<$ T $>$@{MsgQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{msg\_queue}{msg\_queue}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::queue$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}}$>$ $>$ \mbox{\hyperlink{classMsgQueue}{Msg\+Queue}}$<$ T $>$\+::msg\+\_\+queue}
+
+The underlying message queue. \mbox{\Hypertarget{classMsgQueue_a7e353a6cc4f1d929173d115cc512a297}\label{classMsgQueue_a7e353a6cc4f1d929173d115cc512a297}} 
+\index{MsgQueue$<$ T $>$@{MsgQueue$<$ T $>$}!mutex\_1@{mutex\_1}}
+\index{mutex\_1@{mutex\_1}!MsgQueue$<$ T $>$@{MsgQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{mutex\_1}{mutex\_1}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::mutex \mbox{\hyperlink{classMsgQueue}{Msg\+Queue}}$<$ T $>$\+::mutex\+\_\+1}
+
+Mutex for ensuring thread safety. \mbox{\Hypertarget{classMsgQueue_a7547e9caeff3b33cedae7e5928bd1415}\label{classMsgQueue_a7547e9caeff3b33cedae7e5928bd1415}} 
+\index{MsgQueue$<$ T $>$@{MsgQueue$<$ T $>$}!processModule@{processModule}}
+\index{processModule@{processModule}!MsgQueue$<$ T $>$@{MsgQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{processModule}{processModule}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classProcessModule}{Process\+Module}} \mbox{\hyperlink{classMsgQueue}{Msg\+Queue}}$<$ T $>$\+::process\+Module}
+
+The process module for additional processing. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/\+Users/dilar/\+One\+Drive/\+Masaüstü/project/udplib/udp\+\_\+project/include/Msg\+Queue.\+h\end{DoxyCompactItemize}

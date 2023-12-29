@@ -1,0 +1,165 @@
+\hypertarget{classThreadPool}{}\doxysection{Thread\+Pool Class Reference}
+\label{classThreadPool}\index{ThreadPool@{ThreadPool}}
+
+
+A thread pool for processing messages with worker threads.  
+
+
+
+
+{\ttfamily \#include $<$Thread\+Pool.\+h$>$}
+
+
+
+Collaboration diagram for Thread\+Pool\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classThreadPool_a3e0ddf4638e66015010fd3e0cdeed3ff}{Thread\+Pool}} (int num\+Threads)
+\begin{DoxyCompactList}\small\item\em Constructor to create a thread pool with a specified number of worker threads. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classThreadPool_a44d3d2ab618970605e684efc216655eb}{$\sim$\+Thread\+Pool}} ()
+\begin{DoxyCompactList}\small\item\em Destructor to clean up the thread pool. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classThreadPool_a53c42a56628985cd8fbc7cbffc6f5c83}{Push\+Queue}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}} $>$val)
+\begin{DoxyCompactList}\small\item\em Pushes a message to the thread pool for processing. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}} $>$ \mbox{\hyperlink{classThreadPool_a7f511a679df6937a895493896de0abcf}{worker\+Thread}} ()
+\begin{DoxyCompactList}\small\item\em Worker thread function that processes messages from the queue. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}} $>$ \mbox{\hyperlink{classThreadPool_abf2d65ff3156c137575c882160ae4db9}{on\+Data}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}} $>$ val)
+\begin{DoxyCompactList}\small\item\em Callback function to process a message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classThreadPool}{Thread\+Pool}} $\ast$ \mbox{\hyperlink{classThreadPool_a425d9481a69be20791ab1cc60e33c8ad}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Gets an instance of the \mbox{\hyperlink{classThreadPool}{Thread\+Pool}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classThreadPool_a16781e84be1e9342e108299b318d2f75}\label{classThreadPool_a16781e84be1e9342e108299b318d2f75}} 
+std\+::vector$<$ std\+::thread $>$ {\bfseries threads}
+\item 
+\mbox{\Hypertarget{classThreadPool_aef204c83034428bc8b0e729491aa546d}\label{classThreadPool_aef204c83034428bc8b0e729491aa546d}} 
+std\+::mutex {\bfseries mutex\+\_\+1}
+\item 
+\mbox{\Hypertarget{classThreadPool_a6dd0c005d9bc726e976def8d6ac2d2a7}\label{classThreadPool_a6dd0c005d9bc726e976def8d6ac2d2a7}} 
+std\+::condition\+\_\+variable {\bfseries condition}
+\item 
+\mbox{\Hypertarget{classThreadPool_a04e2cc4b3c979b4e054071436988d23d}\label{classThreadPool_a04e2cc4b3c979b4e054071436988d23d}} 
+bool {\bfseries stop}
+\item 
+\mbox{\Hypertarget{classThreadPool_a34e862bcb07ee05da2a3b45b243e2ba3}\label{classThreadPool_a34e862bcb07ee05da2a3b45b243e2ba3}} 
+\mbox{\hyperlink{classMsgQueue}{Msg\+Queue}}$<$ \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}} $>$ $\ast$ {\bfseries msg\+Queue\+\_\+acces} = new \mbox{\hyperlink{classMsgQueue}{Msg\+Queue}}$<$\mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}}$>$()
+\item 
+\mbox{\Hypertarget{classThreadPool_a8e971fdb0ffce489e62c83e84eb90719}\label{classThreadPool_a8e971fdb0ffce489e62c83e84eb90719}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}} $>$ {\bfseries ondata\+\_\+pass}
+\item 
+\mbox{\Hypertarget{classThreadPool_a90cf777de0b731854360776878efdce6}\label{classThreadPool_a90cf777de0b731854360776878efdce6}} 
+\mbox{\hyperlink{classMsgQueue}{Msg\+Queue}}$<$ \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}} $>$ \& {\bfseries msgqueue} = \mbox{\hyperlink{classMsgQueue}{Msg\+Queue}}$<$\mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}}$>$\+::\mbox{\hyperlink{classThreadPool_a425d9481a69be20791ab1cc60e33c8ad}{get\+Instance}}()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A thread pool for processing messages with worker threads. 
+
+This class represents a thread pool that can process messages using multiple worker threads. It allows messages of type \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}} to be pushed to the pool for parallel processing. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classThreadPool_a3e0ddf4638e66015010fd3e0cdeed3ff}\label{classThreadPool_a3e0ddf4638e66015010fd3e0cdeed3ff}} 
+\index{ThreadPool@{ThreadPool}!ThreadPool@{ThreadPool}}
+\index{ThreadPool@{ThreadPool}!ThreadPool@{ThreadPool}}
+\doxysubsubsection{\texorpdfstring{ThreadPool()}{ThreadPool()}}
+{\footnotesize\ttfamily Thread\+Pool\+::\+Thread\+Pool (\begin{DoxyParamCaption}\item[{int}]{num\+Threads }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor to create a thread pool with a specified number of worker threads. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Threads} & The number of worker threads in the pool. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classThreadPool_a44d3d2ab618970605e684efc216655eb}\label{classThreadPool_a44d3d2ab618970605e684efc216655eb}} 
+\index{ThreadPool@{ThreadPool}!````~ThreadPool@{$\sim$ThreadPool}}
+\index{````~ThreadPool@{$\sim$ThreadPool}!ThreadPool@{ThreadPool}}
+\doxysubsubsection{\texorpdfstring{$\sim$ThreadPool()}{~ThreadPool()}}
+{\footnotesize\ttfamily Thread\+Pool\+::$\sim$\+Thread\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor to clean up the thread pool. 
+
+This destructor stops all worker threads and joins them before destroying the thread pool. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classThreadPool_a425d9481a69be20791ab1cc60e33c8ad}\label{classThreadPool_a425d9481a69be20791ab1cc60e33c8ad}} 
+\index{ThreadPool@{ThreadPool}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!ThreadPool@{ThreadPool}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classThreadPool}{Thread\+Pool}}$\ast$ Thread\+Pool\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Gets an instance of the \mbox{\hyperlink{classThreadPool}{Thread\+Pool}} class. 
+
+This method returns a static instance of the \mbox{\hyperlink{classThreadPool}{Thread\+Pool}} class, which allows access to the thread pool functionality.
+
+\begin{DoxyReturn}{Returns}
+A pointer to a static instance of the \mbox{\hyperlink{classThreadPool}{Thread\+Pool}} class. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classThreadPool_abf2d65ff3156c137575c882160ae4db9}\label{classThreadPool_abf2d65ff3156c137575c882160ae4db9}} 
+\index{ThreadPool@{ThreadPool}!onData@{onData}}
+\index{onData@{onData}!ThreadPool@{ThreadPool}}
+\doxysubsubsection{\texorpdfstring{onData()}{onData()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}}$>$ Thread\+Pool\+::on\+Data (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}} $>$}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Callback function to process a message. 
+
+This function is called to process a message received from the message queue.
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & A shared pointer to a \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}} message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A shared pointer to the processed \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}} message. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classThreadPool_a53c42a56628985cd8fbc7cbffc6f5c83}\label{classThreadPool_a53c42a56628985cd8fbc7cbffc6f5c83}} 
+\index{ThreadPool@{ThreadPool}!PushQueue@{PushQueue}}
+\index{PushQueue@{PushQueue}!ThreadPool@{ThreadPool}}
+\doxysubsubsection{\texorpdfstring{PushQueue()}{PushQueue()}}
+{\footnotesize\ttfamily void Thread\+Pool\+::\+Push\+Queue (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}} $>$}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pushes a message to the thread pool for processing. 
+
+This method adds a shared pointer to a \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}} message to the thread pool for parallel processing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & A shared pointer to a \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}} message. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classThreadPool_a7f511a679df6937a895493896de0abcf}\label{classThreadPool_a7f511a679df6937a895493896de0abcf}} 
+\index{ThreadPool@{ThreadPool}!workerThread@{workerThread}}
+\index{workerThread@{workerThread}!ThreadPool@{ThreadPool}}
+\doxysubsubsection{\texorpdfstring{workerThread()}{workerThread()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}}$>$ Thread\+Pool\+::worker\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Worker thread function that processes messages from the queue. 
+
+This function is called by worker threads to process messages from the message queue.
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to a \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}} message that has been processed. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/\+Users/dilar/\+One\+Drive/\+Masaüstü/project/udplib/udp\+\_\+project/include/Thread\+Pool.\+h\end{DoxyCompactItemize}

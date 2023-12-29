@@ -1,0 +1,60 @@
+\hypertarget{classProcessModule}{}\doxysection{Process\+Module Class Reference}
+\label{classProcessModule}\index{ProcessModule@{ProcessModule}}
+
+
+\mbox{\hyperlink{classProcessModule}{Process\+Module}} class for processing messages from a queue.  
+
+
+
+
+{\ttfamily \#include $<$Process\+Module.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classProcessModule_ab42586e389d98b8932a73b9040a5cce5}\label{classProcessModule_ab42586e389d98b8932a73b9040a5cce5}} 
+\mbox{\hyperlink{classProcessModule_ab42586e389d98b8932a73b9040a5cce5}{Process\+Module}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{classProcessModule}{Process\+Module}} class. \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classProcessModule_a8958e3d9b775e4281b843ee619fe00c1}{Pop\+From\+Queue}} (std\+::queue$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}} $>$$>$ \&msg\+\_\+queue, std\+::mutex \&mutex\+\_\+1)
+\begin{DoxyCompactList}\small\item\em Pops a message from the message queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classProcessModule_af3f3ee6810a7d0114f6ca1d7746974b7}\label{classProcessModule_af3f3ee6810a7d0114f6ca1d7746974b7}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}} $>$ {\bfseries message}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classProcessModule}{Process\+Module}} class for processing messages from a queue. 
+
+The \mbox{\hyperlink{classProcessModule}{Process\+Module}} class provides functionality for popping messages from a message queue and processing them in a thread-\/safe manner. It is used to retrieve messages from a queue and perform further operations on them. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classProcessModule_a8958e3d9b775e4281b843ee619fe00c1}\label{classProcessModule_a8958e3d9b775e4281b843ee619fe00c1}} 
+\index{ProcessModule@{ProcessModule}!PopFromQueue@{PopFromQueue}}
+\index{PopFromQueue@{PopFromQueue}!ProcessModule@{ProcessModule}}
+\doxysubsubsection{\texorpdfstring{PopFromQueue()}{PopFromQueue()}}
+{\footnotesize\ttfamily auto Process\+Module\+::\+Pop\+From\+Queue (\begin{DoxyParamCaption}\item[{std\+::queue$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMsgQueueItem}{Msg\+Queue\+Item}} $>$$>$ \&}]{msg\+\_\+queue,  }\item[{std\+::mutex \&}]{mutex\+\_\+1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pops a message from the message queue. 
+
+This function pops a message from the provided message queue. It ensures that the queue is not empty before popping a message and prints a message to indicate the operation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg\+\_\+queue} & The message queue from which the message will be popped. \\
+\hline
+{\em mutex\+\_\+1} & The mutex used for thread synchronization. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The popped message from the queue. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/\+Users/dilar/\+One\+Drive/\+Masaüstü/project/udplib/udp\+\_\+project/include/Process\+Module.\+h\end{DoxyCompactItemize}
